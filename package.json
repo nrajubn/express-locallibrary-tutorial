@@ -1,27 +1,27 @@
 {
-  name: "express-locallibrary-tutorial",
-  author: "Raju Nooka boddu",
-  version: "0.0.0",
-  private: true,
-  scripts: {
-  start: "node ./bin/www",
-  devstart: "nodemon ./bin/www",
-  serverstart: "DEBUG=express-locallibrary-tutorial:* npm run devstart"
+  "name": "express-locallibrary-tutorial",
+  "author": "NOOKA RAJU BODDU",
+  "version": "0.0.0",
+  "engines": {
+    "node": "13.6.0"
   },
-  dependencies: {
-  async: "^3.2.0",
-  cookie-parser: "~1.4.4",
-  debug: "~2.6.9",
-  dotenv: "^8.2.0",
-  express: "~4.16.1",
-  express-validator: "^6.4.0",
-  http-errors: "~1.6.3",
-  moment: "^2.24.0",
-  mongoose: "^5.9.7",
-  morgan: "~1.9.1",
-  pug: "^2.0.4"
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
   },
-  devDependencies: {
-  nodemon: "^2.0.2"
+  "dependencies": {
+    "async": "^3.2.0",
+    "compression": "^1.7.4",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
+    "express": "~4.16.1",
+    "express-validator": "^6.4.0",
+    "helmet": "^3.22.0",
+    "http-errors": "~1.6.3",
+    "moment": "^2.24.0",
+    "mongoose": "^5.9.7",
+    "morgan": "~1.9.1",
+    "pug": "^2.0.4"
   }
-  }
+}

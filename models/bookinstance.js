@@ -3,20 +3,21 @@ let moment = require('moment');
 
 const Schema = mongoose.Schema;
 
-let BookInstanceSchema = new Schema({
-    book: { type: Schema.ObjectId, ref: 'Book', required: true }, // Reference to the associated book.
+let BookInstanceSchema = new Schema(
+  {
+    book: { type: Schema.Types.ObjectId, ref: 'Book', required: true }, //reference to the associated book
     imprint: {type: String, required: true},
-    status: {type: String, required: true, enum:['Available', 'Maintenance', 'Loaned', 'Reserved'], default:'Maintenance'},
-    due_back: { type: Date, default: Date.now },
-});
+    status: {type: String, required: true, enum: ['Available', 'Maintenance', 'Loaned', 'Reserved'], default: 'Maintenance'},
+    due_back: {type: Date, default: Date.now}
+  }
+);
 
-// Virtual for this bookinstance object's URL.
+// Virtual for bookinstance's URL
 BookInstanceSchema
 .virtual('url')
 .get(function () {
-  return '/catalog/bookinstance/'+this._id;
+  return '/catalog/bookinstance/' + this._id;
 });
-
 
 BookInstanceSchema
 .virtual('due_back_formatted')
@@ -31,5 +32,5 @@ BookInstanceSchema
 });
 
 
-// Export model.
+//Export model
 module.exports = mongoose.model('BookInstance', BookInstanceSchema);
